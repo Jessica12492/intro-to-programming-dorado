@@ -5,13 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            "type": "chrome",
             "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}/js/index.js"
+            "name": "Open index.html",
+            "file": "${workspaceFolder}/index.html",
+            "runtimeExecutable": "/opt/google/chrome/chrome"
         }
     ]
 }

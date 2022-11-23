@@ -7,7 +7,7 @@ console.log(footer);
 const copyright = document.createElement('p');
 console.log(copyright)
 copyright.innerHTML = 'Jessica Baker 2022'
-document.body.appendChild(copyright)
+footer.appendChild(copyright);
 const skills = ["Management", "Communication", "Customer Service", "Coding"]
 const skillsSection = document.getElementById('skills');
 const skillsList = skillsSection.querySelector('ul')
@@ -24,6 +24,7 @@ for (let index = 0; index < skills.length; index++) {
 }
 
 console.log(skills)
+
 
 
 
