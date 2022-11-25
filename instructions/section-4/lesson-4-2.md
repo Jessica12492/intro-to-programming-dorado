@@ -95,7 +95,7 @@ Now, open the project directory in your code editor and continue to the next sec
   - hint: `appendChild` method
 - Save and refresh your browser
   - You should see your list of skills beneath the "Skills" heading
-
+  
 ### Final Step:
 
 Check the status of your local repository to double-check the changes you made:
