@@ -6,7 +6,7 @@ const footer = document.querySelector('footer');
 console.log(footer);
 const copyright = document.createElement('p');
 console.log(copyright)
-copyright.innerHTML = 'Jessica Baker 2022'
+copyright.innerHTML = `Jessica Baker ${thisYear}`
 footer.appendChild(copyright);
 const skills = ["Management", "Communication", "Customer Service", "Coding"]
 const skillsSection = document.getElementById('skills');

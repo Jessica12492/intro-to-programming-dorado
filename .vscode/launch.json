@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Open index.html",
             "file": "${workspaceFolder}/index.html",
-            "runtimeExecutable":"/opt/google/chrome/chrome/home/chronos/u-"
+            "runtimeExecutable":"/usr/bin/chromium"
         }
     ]
 }
