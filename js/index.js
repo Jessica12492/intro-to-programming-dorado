@@ -26,7 +26,7 @@ const messageForm = document.querySelector("form[name=leave_message]")
 console.log(messageForm);
 
 messageForm.addEventListener('submit', event => {
-
+    event.preventDefault();
 
     const name = event.target.name.value
 
@@ -36,7 +36,7 @@ messageForm.addEventListener('submit', event => {
     const message = event.target.message.value
     console.log(name, emailAddress, message);
 
-    event.preventDefault();
+
     messageForm.reset();
 
     const messageSection = document.getElementById('messages')
