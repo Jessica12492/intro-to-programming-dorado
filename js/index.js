@@ -19,15 +19,64 @@ for (let index = 0; index < skills.length; index++) {
 
     skill.innerText = skills[index];
     skillsList.appendChild(skill)
-
-
 }
-
 console.log(skills)
 
+const messageForm = document.querySelector("form[name=leave_message]")
+console.log(messageForm);
+
+messageForm.addEventListener('submit', event => {
+    event.preventDefault();
+
+    const name = event.target.name.value
+
+    //console.log(Name)
+    const emailAddress = event.target.email.value
+    //console.log(emailAddress)
+    const message = event.target.message.value
+    console.log(name, emailAddress, message);
+
+
+    messageForm.reset();
+
+    const messageSection = document.getElementById('messages')
+    console.log(messageSection)
+
+    const messageList = messageSection.querySelector('ul')
+    console.log(messageList)
+    const newMessage = document.createElement('li')
+    console.log(newMessage)
+
+    newMessage.innerHTML = `
+       <a class="link" href="mailto:${emailAddress}">
+       ${name}:</a>
+       <span>wrote:
+       ${message}
+       
+     </span>`;
+
+
+    messageList.appendChild(newMessage);
+
+    const removeButton = document.createElement('button')
+    removeButton.innerText = 'remove'
+    removeButton.setAttribute('type', 'button')
+
+    removeButton.addEventListener('click', (remove) => {
+        const entry = document.getElementById('messages')
+
+        removeButton.parentNode.remove()
+
+        console.log(entry)
+
+
+        // entry.remove();
+
+
+    })
+
+    newMessage.appendChild(removeButton);
 
 
 
-
-
-
+});
