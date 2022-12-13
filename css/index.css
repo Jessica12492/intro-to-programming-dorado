@@ -70,6 +70,7 @@ h3 {
 /* font for each form label names*/
 
 section form label {
+    padding:0px;
     font-family: 'arial';
     font-weight: bolder;
     font-size: 22px;
@@ -131,6 +132,11 @@ body {
 #messages {
 
     list-style: square;
+}
+
+#messages li{
+
+    overflow-wrap: break-word;
 }
 
 
