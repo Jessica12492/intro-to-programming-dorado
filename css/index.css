@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=La+Belle+Aurore&display=swap');
+
+body {
+    background: linear-gradient(#ff61d2, #fe9090);
+    color: black;
+    font-family: 'handlee';
+}
+
+/*paragraph sections*/
+section p,
+ul {
+    font-family: 'Georgia', sans-serif;
+    justify-content: space-evenly;
+    width: 300px;
+    line-height: 3em;
+    border: 15px solid orange;
+    padding: 50px;
+    margin: auto;
+    font-size: 19px;
+
+
+    list-style: square;
+    margin-block: 25px;
+
+
+    background: crimson;
+}
+
+
+/* font for About section*/
+section,
+h1 {
+
+    font-family: 'Courier New';
+    text-align: center;
+    font-style: bold;
+    font-size: 60px;
+    color: black
+}
+
+
+/* purple border around each section*/
+h2,
+h3,
+form {
+    font-size: 20px;
+    color: black;
+    text-justify: auto;
+    display: block;
+    background-color: lightgrey;
+    width: 500px;
+    border: 15px solid purple;
+    padding: 10px;
+    margin: auto;
+}
+
+
+/*  fonts for all section labels*/
+
+section label,
+h2,
+h3 {
+    font-family: 'Verdana';
+    padding: 50px;
+    margin-block-start: 10px;
+    font-size: 40px;
+}
+
+
+/* font for each form label names*/
+
+section form label {
+    font-family: 'arial';
+    font-weight: bolder;
+    font-size: 22px;
+}
+
+
+/*textarea input section*/
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=La+Belle+Aurore&display=swap');
+
+input,
+textarea {
+
+    font-family: 'handlee';
+    font-size: 25px;
+    background-color: aqua;
+    border: 3px solid gold;
+}
+
+
+
+/*button section*/
+button {
+
+    font-family: 'cursive';
+    font-style: italic;
+    font-size: 20px;
+    display: inline;
+    font-weight: bold;
+    background-color: green;
+}
+
+
+/*Picture section*/
+img {
+
+    border-radius: 50px;
+    background-color: beige;
+    border: 2px solid black
+}
+
+
+/*logo name section*/
+.logo {
+
+    text-align: left;
+    font-size: 20px;
+}
+
+
+/* Centered body section*/
+section,
+body {
+
+    text-align: center;
+}
+
+
+/* changed style-list for message section*/
+#messages {
+
+    list-style: square;
+}
+
+
+/* Added lavendar box around footer*/
+footer p {
+    font-weight: bold;
+    padding: 5px;
+    display: inline;
+    color: black;
+    background-color: lavender;
+}
+
+
+@media all and (max-width: 1200px) {
+
+    section,
+    body {
+        background-color: teal;
+        border: 20px solid grey;
+
+    }
+}
