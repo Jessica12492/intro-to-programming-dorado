@@ -11,7 +11,7 @@ section p,
 ul {
     font-family: 'Georgia', sans-serif;
     justify-content: space-evenly;
-    width: 300px;
+    width: 400px;
     line-height: 3em;
     border: 15px solid orange;
     padding: 50px;
@@ -38,6 +38,11 @@ h1 {
     color: black
 }
 
+/*hover my name & about label*/
+h1:hover {
+    cursor: pointer;
+    color: pink;
+}
 
 /* purple border around each section*/
 h2,
@@ -70,7 +75,8 @@ h3 {
 /* font for each form label names*/
 
 section form label {
-    padding:0px;
+    width: 100px;
+    padding: 0px;
     font-family: 'arial';
     font-weight: bolder;
     font-size: 22px;
@@ -82,7 +88,9 @@ section form label {
 
 input,
 textarea {
-
+    height: 60px;
+    margin: left;
+    width: 100%;
     font-family: 'handlee';
     font-size: 25px;
     background-color: aqua;
@@ -93,6 +101,9 @@ textarea {
 
 /*button section*/
 button {
+    margin: auto;
+    height: 50px;
+    width: 100px;
 
     font-family: 'cursive';
     font-style: italic;
@@ -134,7 +145,8 @@ body {
     list-style: square;
 }
 
-#messages li{
+/*makes messages fit in box*/
+#messages li {
 
     overflow-wrap: break-word;
 }
@@ -150,12 +162,108 @@ footer p {
 }
 
 
-@media all and (max-width: 1200px) {
+
+
+/* style navigational header */
+header ul {
+
+    margin: 100px;
+    font-family: Verdana;
+    font-weight: bold;
+    display: inline;
+    background-color: rgb(136, 6, 136);
+    border: 5px solid black;
+    box-shadow: 0 25px 25px -25px black;
+}
+
+/* made header text next to eachother with space with padding*/
+header ul li {
+
+    display: inline-block;
+    cursor: auto;
+    padding: 13px 35px;
+    list-style: none;
+    position: relative;
+    z-index: 5;
+    transition: 0.3s;
+}
+
+/*hover nav bar*/
+header ul li:hover {
+
+    background: plum;
+}
+
+/* made header with no underline & change link text color*/
+header li a {
+
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black
+}
+
+
+/* made header sticky*/
+header {
+
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+/*make scrolling smooth*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*added flex with columns*/
+section h2,
+h3,
+ul,
+li,
+form {
+
+
+    flex-direction: column;
+
+
+    display: flex;
+
+}
+
+/*media query for all desktops*/
+
+@media (max-width: 1200px) {
 
     section,
     body {
+        flex-wrap: wrap;
         background-color: teal;
         border: 20px solid grey;
 
+    }
+}
+
+/* media query for mobile Phones */
+@media only screen and(max-width : 480px) {
+
+    section,
+    body {
+
+        background-color: skyblue;
+        border: 20px grey;
+
+    }
+}
+
+/* media query for  Tablets */
+@media only screen and(max-device-width:768px) {
+
+    section,
+    body {
+
+        background-color: violet;
+        border: 20px solid grey;
     }
 }
