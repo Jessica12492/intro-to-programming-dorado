@@ -65,6 +65,7 @@ form {
 section label,
 h2,
 h3 {
+
     font-family: 'Verdana';
     padding: 50px;
     margin-block-start: 10px;
@@ -218,19 +219,22 @@ html {
 }
 
 /*added flex with columns*/
-section h2,
-h3,
-ul,
-li,
-form {
 
+#experience ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
 
-    flex-direction: column;
-
+section form {
 
     display: flex;
+    flex-direction: column;
 
 }
+
+
+
 
 /*media query for all desktops*/
 
@@ -238,32 +242,61 @@ form {
 
     section,
     body {
+
         flex-wrap: wrap;
         background-color: teal;
         border: 20px solid grey;
 
     }
+
+    header ul {
+        font-size: 14px;
+        margin: 50px;
+        padding: 8px;
+    }
 }
 
-/* media query for mobile Phones */
-@media only screen and(max-width : 480px) {
+
+
+/* media query for  Tablets */
+@media only screen and (max-width: 768px) {
 
     section,
     body {
+
+        flex-wrap: wrap;
+        background-color: violet;
+        border: 20px solid grey;
+    }
+
+    header ul {
+
+        font-size: 9px;
+        padding: 5px;
+        margin: 35px;
+    }
+
+}
+
+/* media query for mobile Phones */
+@media only screen and (max-width: 480px) {
+
+    section,
+    body {
+
+        flex-wrap: wrap;
 
         background-color: skyblue;
         border: 20px grey;
 
     }
-}
 
-/* media query for  Tablets */
-@media only screen and(max-device-width:768px) {
+    header ul {
+        font-size: 4px;
+        margin: 5px;
+        padding: 2px;
 
-    section,
-    body {
-
-        background-color: violet;
-        border: 20px solid grey;
     }
+
+
 }
