@@ -254,6 +254,10 @@ section form {
         margin: 50px;
         padding: 8px;
     }
+
+    header ul li {
+        padding: 0;
+    }
 }
 
 
@@ -276,6 +280,9 @@ section form {
         margin: 35px;
     }
 
+    header ul li {
+        padding: 0;
+    }
 }
 
 /* media query for mobile Phones */
@@ -298,5 +305,8 @@ section form {
 
     }
 
+    header ul li {
+        padding: 0;
+    }
 
 }
