@@ -102,7 +102,7 @@ event.preventDefault();
 
         console.log(project);
         /*set the inner text of  project variable to the current Array element*/
-        projectList.innertext = repositories[index]
+        project.innerText = repositories[index].name
         
 
         /*append the project element to the projectList element*/
