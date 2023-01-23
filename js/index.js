@@ -81,18 +81,31 @@ messageForm.addEventListener('submit', event => {
 
 });
 /*create new XMLHttpRequest object and store in variable*/
-const githubRequest = new XMLHttpRequest();
+//const githubRequest = new XMLHttpRequest();
 
 /*call open method*/
-githubRequest.open('GET', 'https://api.github.com/users/Jessica12492/repos');
+/*githubRequest.open('GET', 'https://api.github.com/users/Jessica12492/repos');*/
 /* call send method on githubrequest*/
-githubRequest.send();
+/*githubRequest.send();*/
 /*add load event listener  parsed the response & store variable inside the callback function*/
 
-githubRequest.addEventListener('load', event=>{
-event.preventDefault();
-    const repositories = JSON.parse(githubRequest.responseText);
-    console.log(repositories);
+/*githubRequest.addEventListener('load', event=>{*/
+/*event.preventDefault();*/
+
+/*Create 'GET' request*/
+ fetch('https://api.github.com/users/Jessica12492/repos',{
+    Method: 'GET',
+    
+})
+
+/*returns response data*/
+.then(json=>
+  console.log(json))
+  
+
+
+  const repositories = JSON.parse(json.responseText);
+    console.log(repositories)
     const projectSection = document.getElementById('projects');
     /*query projectSection*/
     const projectList = projectSection.querySelector('ul');
@@ -100,13 +113,13 @@ event.preventDefault();
     for (let index = 0; index < repositories.length; index++) {
         const project = document.createElement('li');
 
-        console.log(project);
+      console.log(project);
         /*set the inner text of  project variable to the current Array element*/
         project.innerText = repositories[index].name
         
 
         /*append the project element to the projectList element*/
-        projectList.appendChild(project);
+       projectList.appendChild(project);
     }
-
-});
+  
+//})
