@@ -15,10 +15,10 @@ const skillsList = skillsSection.querySelector('ul')
 for (let index = 0; index < skills.length; index++) {
 
 
-    const skill = document.createElement('li');
+  const skill = document.createElement('li');
 
-    skill.innerText = skills[index];
-    skillsList.appendChild(skill)
+  skill.innerText = skills[index];
+  skillsList.appendChild(skill)
 }
 console.log(skills)
 
@@ -26,28 +26,28 @@ const messageForm = document.querySelector("form[name=leave_message]")
 console.log(messageForm);
 
 messageForm.addEventListener('submit', event => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const name = event.target.name.value
+  const name = event.target.name.value
 
-    //console.log(Name)
-    const emailAddress = event.target.email.value
-    //console.log(emailAddress)
-    const message = event.target.message.value
-    console.log(name, emailAddress, message);
+  //console.log(Name)
+  const emailAddress = event.target.email.value
+  //console.log(emailAddress)
+  const message = event.target.message.value
+  console.log(name, emailAddress, message);
 
 
-    messageForm.reset();
+  messageForm.reset();
 
-    const messageSection = document.getElementById('messages')
-    console.log(messageSection)
+  const messageSection = document.getElementById('messages')
+  console.log(messageSection)
 
-    const messageList = messageSection.querySelector('ul')
-    console.log(messageList)
-    const newMessage = document.createElement('li')
-    console.log(newMessage)
+  const messageList = messageSection.querySelector('ul')
+  console.log(messageList)
+  const newMessage = document.createElement('li')
+  console.log(newMessage)
 
-    newMessage.innerHTML = `
+  newMessage.innerHTML = `
        <a class="link" href="mailto:${emailAddress}">
        ${name}:</a>
        <span>wrote:
@@ -56,26 +56,26 @@ messageForm.addEventListener('submit', event => {
      </span>`;
 
 
-    messageList.appendChild(newMessage);
+  messageList.appendChild(newMessage);
 
-    const removeButton = document.createElement('button')
-    removeButton.innerText = 'remove'
-    removeButton.setAttribute('type', 'button')
+  const removeButton = document.createElement('button')
+  removeButton.innerText = 'remove'
+  removeButton.setAttribute('type', 'button')
 
-    removeButton.addEventListener('click', (remove) => {
-        const entry = document.getElementById('messages')
+  removeButton.addEventListener('click', (remove) => {
+    const entry = document.getElementById('messages')
 
-        removeButton.parentNode.remove()
+    removeButton.parentNode.remove()
 
-        console.log(entry)
-
-
-        // entry.remove();
+    console.log(entry)
 
 
-    })
+    // entry.remove();
 
-    newMessage.appendChild(removeButton);
+
+  })
+
+  newMessage.appendChild(removeButton);
 
 
 
@@ -89,37 +89,42 @@ messageForm.addEventListener('submit', event => {
 /*githubRequest.send();*/
 /*add load event listener  parsed the response & store variable inside the callback function*/
 
-/*githubRequest.addEventListener('load', event=>{*/
-/*event.preventDefault();*/
+//githubRequest.addEventListener('load', event=>{
+//event.preventDefault();
 
 /*Create 'GET' request*/
- fetch('https://api.github.com/users/Jessica12492/repos',{
-    Method: 'GET',
-    
-})
+fetch('https://api.github.com/users/Jessica12492/repos')
 
-/*returns response data*/
-.then(json=>
-  console.log(json))
+  /*returns response data*/
+  .then(response => {
+    //  console.log(response.json())
+    return response.json()
+  })
+
+  .then(repositories => {
+    console.log(repositories)
+
+
+
+
+
   
-
-
-  const repositories = JSON.parse(json.responseText);
+    //const repositories = JSON.parse(Promise1.responseText);
     console.log(repositories)
     const projectSection = document.getElementById('projects');
     /*query projectSection*/
     const projectList = projectSection.querySelector('ul');
     /*add for loop to iteriate over repositories*/
     for (let index = 0; index < repositories.length; index++) {
-        const project = document.createElement('li');
+      const project = document.createElement('li');
 
       console.log(project);
-        /*set the inner text of  project variable to the current Array element*/
-        project.innerText = repositories[index].name
-        
+      /*set the inner text of  project variable to the current Array element*/
+      project.innerText = repositories[index].name
 
-        /*append the project element to the projectList element*/
-       projectList.appendChild(project);
+
+      /*append the project element to the projectList element*/
+      projectList.appendChild(project);
     }
-  
-//})
+
+  })
