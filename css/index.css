@@ -194,6 +194,10 @@ header ul li:hover {
 
     background: plum;
 }
+  ul li:hover{
+    cursor: pointer;
+    background: plum;
+}
 
 /* made header with no underline & change link text color*/
 header li a {

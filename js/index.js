@@ -94,7 +94,6 @@ messageForm.addEventListener('submit', event => {
 
 /*Create 'GET' request*/
 fetch('https://api.github.com/users/Jessica12492/repos')
-
   /*returns response data*/
   .then(response => {
     //  console.log(response.json())
@@ -108,23 +107,39 @@ fetch('https://api.github.com/users/Jessica12492/repos')
 
 
 
-  
     //const repositories = JSON.parse(Promise1.responseText);
-    console.log(repositories)
+
+    //const link=document.createTextNode('This is link')
     const projectSection = document.getElementById('projects');
     /*query projectSection*/
     const projectList = projectSection.querySelector('ul');
     /*add for loop to iteriate over repositories*/
+    
     for (let index = 0; index < repositories.length; index++) {
+      repositories[index].full_name
+//console.log(repositories.length)
+    //console.log(repositories)
+   // console.log(repositories[index].full_name)
+      const aTag = document.createElement('a')
       const project = document.createElement('li');
-
+     // const aTag = document.createElement('a')
+      
+    
       console.log(project);
+
+      project.appendChild(aTag)
+
       /*set the inner text of  project variable to the current Array element*/
-      project.innerText = repositories[index].name
-
-
+      //project.innerText = repositories[index].name
+      aTag.innerText = repositories[index].full_name
+      //project.appendChild(aTag)
+      aTag.setAttribute("href", repositories[index].clone_url)
+     //aTag.setAttribute('href', 'git://github.com/Jessica12492/intro-to-programming-dorado')
+     console.log(aTag)
+     console.log(repositories[index].clone_url)
+      //aTag.setAttribute('href','https://github.com/Jessica12492/intro-to-programming-section-5')
       /*append the project element to the projectList element*/
       projectList.appendChild(project);
     }
-
+  
   })
