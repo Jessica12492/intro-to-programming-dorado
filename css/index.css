@@ -43,31 +43,51 @@ h1:hover {
     cursor: default;
     color: pink;
 }
+
 /* hover each section*/
-h2:hover{
+h2:hover {
     cursor: default;
 }
-/* fix font for connect section*/
- #connect{
-    list-style: square;
-    display: block;
-    
+
+/* fix font for links in connect section*/
+#connect a {
+
+
+
+    padding: 15px;
     font-size: 30px;
     text-align: center;
 }
+
+/*styling the links for  a tags in connect section*/
+#connect a:hover {
+    border: 2px;
+    padding: 4px;
+    height: 100px;
+    width: 100px;
+    display: inline;
+
+    background: plum;
+}
+
 /*change color to black for any link*/
-a:any-link{
+a:any-link {
+
+
     color: black;
 }
+
+
 /*hover remove button with pointer*/
-[type=button]{
+[type=button] {
     cursor: pointer;
 }
+
 /* hover submit button with pointer*/
- [type=submit]{
+[type=submit] {
     cursor: pointer;
 }
- 
+
 
 /* purple border around each section*/
 h2,
@@ -217,14 +237,17 @@ header ul li {
 
 
 /* hover nav bar*/
-   header ul li:hover{
-    
+header ul li:hover {
+
     background: plum;
-   }
-/*hover links*/
-ul li a:hover{
+}
+
+/*hover project links*/
+ul li a:hover {
+
     background: plum;
-} 
+}
+
 /* made header with no underline & change link text color*/
 header li a {
 
@@ -257,7 +280,7 @@ html {
 }
 
 section form {
-
+    margin-top: 16px;
     display: flex;
     flex-direction: column;
 
@@ -275,7 +298,7 @@ section form {
 
         flex-wrap: wrap;
         background: teal;
-        border: 20px solid grey;
+        border: 20px solid teal;
 
     }
 
@@ -300,7 +323,7 @@ section form {
 
         flex-wrap: wrap;
         background: violet;
-        border: 20px ;
+        border: 20px;
     }
 
     header ul {
