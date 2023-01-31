@@ -38,11 +38,36 @@ h1 {
     color: black
 }
 
-/*hover my name & about label*/
+/*hover my name */
 h1:hover {
-    cursor: pointer;
+    cursor: default;
     color: pink;
 }
+/* hover each section*/
+h2:hover{
+    cursor: default;
+}
+/* fix font for connect section*/
+ #connect{
+    list-style: square;
+    display: block;
+    
+    font-size: 30px;
+    text-align: center;
+}
+/*change color to black for any link*/
+a:any-link{
+    color: black;
+}
+/*hover remove button with pointer*/
+[type=button]{
+    cursor: pointer;
+}
+/* hover submit button with pointer*/
+ [type=submit]{
+    cursor: pointer;
+}
+ 
 
 /* purple border around each section*/
 h2,
@@ -155,8 +180,9 @@ body {
 
 /* Added lavendar box around footer*/
 footer p {
+    font-size: 15px;
     font-weight: bold;
-    padding: 5px;
+    padding: 3px;
     display: inline;
     color: black;
     background-color: lavender;
@@ -189,16 +215,16 @@ header ul li {
     transition: 0.3s;
 }
 
-/*hover nav bar*/
-header ul li:hover {
 
+/* hover nav bar*/
+   header ul li:hover{
+    
     background: plum;
-}
-  ul li:hover{
-    cursor: pointer;
+   }
+/*hover links*/
+ul li a:hover{
     background: plum;
-}
-
+} 
 /* made header with no underline & change link text color*/
 header li a {
 
@@ -248,7 +274,7 @@ section form {
     body {
 
         flex-wrap: wrap;
-        background-color: teal;
+        background: teal;
         border: 20px solid grey;
 
     }
@@ -273,8 +299,8 @@ section form {
     body {
 
         flex-wrap: wrap;
-        background-color: violet;
-        border: 20px solid grey;
+        background: violet;
+        border: 20px ;
     }
 
     header ul {
@@ -297,8 +323,8 @@ section form {
 
         flex-wrap: wrap;
 
-        background-color: skyblue;
-        border: 20px grey;
+        background: grey;
+        border: 20px;
 
     }
 
