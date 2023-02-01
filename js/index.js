@@ -1,11 +1,7 @@
 const today = new Date()
 const thisYear = today.getFullYear()
-console.log(today);
-console.log(thisYear);
 const footer = document.querySelector('footer');
-console.log(footer);
 const copyright = document.createElement('p');
-console.log(copyright)
 copyright.innerHTML = `Jessica Baker ${thisYear}`
 footer.appendChild(copyright);
 const skills = ["Management", "Communication", "Customer Service", "Coding"]
@@ -15,39 +11,39 @@ const skillsList = skillsSection.querySelector('ul')
 for (let index = 0; index < skills.length; index++) {
 
 
-    const skill = document.createElement('li');
+  const skill = document.createElement('li');
 
-    skill.innerText = skills[index];
-    skillsList.appendChild(skill)
+  skill.innerText = skills[index];
+  skillsList.appendChild(skill)
 }
-console.log(skills)
+
 
 const messageForm = document.querySelector("form[name=leave_message]")
-console.log(messageForm);
+
 
 messageForm.addEventListener('submit', event => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const name = event.target.name.value
-
-    //console.log(Name)
-    const emailAddress = event.target.email.value
-    //console.log(emailAddress)
-    const message = event.target.message.value
-    console.log(name, emailAddress, message);
+  const name = event.target.name.value
 
 
-    messageForm.reset();
+  const emailAddress = event.target.email.value
 
-    const messageSection = document.getElementById('messages')
-    console.log(messageSection)
+  const message = event.target.message.value
+  
 
-    const messageList = messageSection.querySelector('ul')
-    console.log(messageList)
-    const newMessage = document.createElement('li')
-    console.log(newMessage)
 
-    newMessage.innerHTML = `
+  messageForm.reset();
+
+  const messageSection = document.getElementById('messages')
+
+
+  const messageList = messageSection.querySelector('ul')
+
+  const newMessage = document.createElement('li')
+
+
+  newMessage.innerHTML = `
        <a class="link" href="mailto:${emailAddress}">
        ${name}:</a>
        <span>wrote:
@@ -56,57 +52,70 @@ messageForm.addEventListener('submit', event => {
      </span>`;
 
 
-    messageList.appendChild(newMessage);
+  messageList.appendChild(newMessage);
 
-    const removeButton = document.createElement('button')
-    removeButton.innerText = 'remove'
-    removeButton.setAttribute('type', 'button')
+  const removeButton = document.createElement('button')
+  removeButton.innerText = 'remove'
+  removeButton.setAttribute('type', 'button')
 
-    removeButton.addEventListener('click', (remove) => {
-        const entry = document.getElementById('messages')
+  removeButton.addEventListener('click', (remove) => {
+    const entry = document.getElementById('messages')
 
-        removeButton.parentNode.remove()
-
-        console.log(entry)
+    removeButton.parentNode.remove()
 
 
-        // entry.remove();
 
 
-    })
 
-    newMessage.appendChild(removeButton);
+
+
+  })
+
+  newMessage.appendChild(removeButton);
 
 
 
 });
-/*create new XMLHttpRequest object and store in variable*/
-const githubRequest = new XMLHttpRequest();
 
-/*call open method*/
-githubRequest.open('GET', 'https://api.github.com/users/Jessica12492/repos');
-/* call send method on githubrequest*/
-githubRequest.send();
-/*add load event listener  parsed the response & store variable inside the callback function*/
 
-githubRequest.addEventListener('load', event=>{
-event.preventDefault();
-    const repositories = JSON.parse(githubRequest.responseText);
-    console.log(repositories);
+/*Create 'GET' request*/
+fetch('https://api.github.com/users/Jessica12492/repos')
+  /*returns response data*/
+  .then(response => {
+
+    return response.json()
+  })
+
+  .then(repositories => {
+
+
+
+
+
+
     const projectSection = document.getElementById('projects');
     /*query projectSection*/
     const projectList = projectSection.querySelector('ul');
     /*add for loop to iteriate over repositories*/
+
     for (let index = 0; index < repositories.length; index++) {
-        const project = document.createElement('li');
+      repositories[index].full_name
+      //Create a element
+      const aTag = document.createElement('a')
+      const project = document.createElement('li');
 
-        console.log(project);
-        /*set the inner text of  project variable to the current Array element*/
-        project.innerText = repositories[index].name
-        
+      /*append the a element to the project element*/
+      project.appendChild(aTag)
 
-        /*append the project element to the projectList element*/
-        projectList.appendChild(project);
+      /*set the inner text of  project variable to the current Array element*/
+      aTag.innerText = repositories[index].full_name
+      /*set attribute method*/
+      aTag.setAttribute("href", repositories[index].clone_url)
+
+      //console.log(repositories[index].clone_url)
+
+      /*append the project element to the projectList element*/
+      projectList.appendChild(project);
     }
 
-});
+  })
